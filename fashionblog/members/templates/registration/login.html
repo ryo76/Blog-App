@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<style>
+
+    #ehe{
+        margin-top: 50px;
+    }
+    .loginform {
+
+        margin-bottom: 165px;
+    }
+
+    .use{
+        padding-top: 15px;
+        padding-bottom:10px;
+    }
+
+    .pas{
+        padding-bottom: 25px;
+    }
+</style>
+<h1 id="ehe">Login</h1>
+
+<div class="form-group loginform">
+    <form method="POST">
+        <div class="form-group use">
+            <label for="username" class="form-label">Username:</label>
+            <input type="text" class="form-control-sm" name="username">
+        </div>
+        <div class="form-group pas">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" class="form-control-sm" name="password">
+            <div id="passHelp" class="form-text">Don't share your password with anyone else.</div>
+        </div>
+        {% csrf_token %}
+          {% comment %} {{ form.as_p }} {% endcomment %}
+        <button class="btn btn-success">Login</button>
+    </form>
+</div>
+
+{% endblock %}

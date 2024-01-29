@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Edit Post{% endblock %}
+{% block content %}
+{% comment %} <style>
+    .uppost {
+        margin-bottom: 100px
+    }
+
+</style> {% endcomment %}
+{% if user.is_authenticated %}
+<h1>Update Post</h1>
+
+<div class="form-group uppost">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.media }}
+        {{ form.as_p }}
+        <button class="btn btn-success">Update</button>
+    </form>
+</div>
+{% else %}
+Hehehehe naughty naughty
+{% endif %}
+
+{% endblock %}

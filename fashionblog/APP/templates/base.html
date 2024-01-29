@@ -1,0 +1,309 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}StyleSphere{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/lux/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+
+        .btn-secondary {
+            margin-right: 10px;
+
+        }
+
+        .card-text {
+            margin-bottom: 10px;
+        }
+
+        .card-columns {
+            margin-top: 40px;
+        }
+
+        .card-title {
+            font-family: 'Inter', sans-serif;
+
+        }
+
+        .card {
+            height: 100px;
+            overflow: hidden;
+            margin-bottom: 35px;
+            border: none;
+            box-shadow: none;
+        }
+
+        .flex-container {
+            box-sizing: content-box;
+            padding: 55px 0 55px;
+            background-color: beige;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            background: url(paperclip.png) left top, color(#F5F5DC);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        footer {
+            background-color: #111;
+        }
+
+        .footercontainer {
+            width: 100%;
+            padding: 60px 30px 20px;
+        }
+
+        .socialicons {
+            display: flex;
+            justify-content: center;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .socialicons a {
+            text-decoration: none;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            background-color: beige;
+            max-width: 50px;
+            border-radius: 100%;
+        }
+
+        .socialicons a i {
+            font-size: 2em;
+            color: black;
+            opacity: 0.9;
+        }
+
+        .socialicons a:hover {
+            background-color: #111;
+            transition: .5s;
+        }
+
+        .socialicons a:hover i {
+            color: beige;
+            transition: .5s;
+        }
+
+        .footernav {
+            margin: 20px 0;
+        }
+
+        .footernav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        .footernav ul li a {
+            color: white;
+            margin: 20px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            opacity: .7;
+            transition: .5;
+        }
+
+        .footernav ul li a:hover {
+            opacity: 1;
+        }
+
+        .footerbottom {
+            display: flex;
+            background-color: #000;
+            padding-top: 15px;
+            justify-content: center;
+        }
+
+        .footerbottom p {
+            color: white;
+        }
+
+        .team {
+            opacity: .7;
+            text-transform: uppercase;
+            font-weight: 400;
+            margin: 0 5px;
+        }
+
+        @media (max-width: 1400px) {
+            .footernav ul {
+                flex-direction: column;
+            }
+
+            .footernav ul li {
+                width: 100px;
+                text-align: center;
+                margin: 10px;
+            }
+
+            .footerbottom {
+                text-align: center;
+            }
+        }
+
+        #posts {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        /* .btn-on-left {
+            margin-right: 10px;
+        }
+
+        .btn-on-middle {
+            margin-right: 980px;
+        } */
+
+        .btn-on-right {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-black #000" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{%url 'home'%}">StyleSphere</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">What To Buy</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Effortless Outfits</a>
+                            <a class="dropdown-item" href="#">Shop Our Picks</a>
+                            <a class="dropdown-item" href="#">Brand Profiles</a>
+                            <a class="dropdown-item" href="#">Buying Guide</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">How to Dress</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Casual Style</a>
+                            <a class="dropdown-item" href="#">Formal Attire</a>
+                            <a class="dropdown-item" href="#">Spring & Summer</a>
+                            <a class="dropdown-item" href="#">Fall & Winter</a>
+                            <a class="dropdown-item" href="#">Style Tips & Tricks</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">Accessories</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Shoes</a>
+                            <a class="dropdown-item" href="#">Jewellery</a>
+                            <a class="dropdown-item" href="#">All Accessories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                </ul>
+
+
+                {% if user.is_authenticated %}
+
+                <ul class="navbar-nav ml-auto">
+                    <form class="d-sm-flex p-2">
+                        <a href="{% url 'add_post' %}" class="btn btn-success"
+                            style="--bs-btn-padding-y: .55rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: .75rem;">Add
+                            Post</a>
+                    </form>
+
+                    <form class="d-sm-flex p-2">
+                        <a href="/logout" class="btn btn-danger"
+                            style="--bs-btn-padding-y: .55rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: .75rem;">Logout</a>
+                    </form>
+
+                    <a class="nav-link  mt-1">
+                        Hi, {{user.first_name}}
+                    </a>
+
+                    {% else %}
+
+                    <form class="d-sm-flex justify-content-md-end p-2">
+                        <a href="{% url 'login' %}" class="btn btn-light"
+                            style="--bs-btn-padding-y: .55rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: .75rem;">Login</a>
+                    </form>
+
+                    <form class="d-sm-flex justify-content-md-end p-2">
+                        <a href="{% url 'register' %}" class="btn btn-warning"
+                            style="--bs-btn-padding-y: .55rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: .75rem;">Register</a>
+                    </form>
+                </ul>
+
+                {% endif %}
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex-container text-center">
+        <h4>Dress Sharp And Feel Confident <small class="text-body-secondary"> Without Tons Of Clothes</small></h4>
+        <p class="lead">Welcome to <strong>StyleSphere</strong>, where fashion meets inspiration. Explore the
+            latest trends, discover timeless styles, and indulge in the allure of a curated wardrobe that speaks to your
+            unique sense of elegance and sophistication.</p>
+    </div>
+
+    <div class="container" id="posts">
+        {% block content %}
+        {% endblock %}
+
+
+    </div>
+
+
+    <footer>
+        <div class="footercontainer">
+            <div class="socialicons">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-github"></i></a>
+            </div>
+            <div class="footernav">
+                <ul>
+                    <li><a href="{%url 'home'%}">StyleSphere</a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">NewsLetter</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footerbottom">
+            <p>Copyright &copy; 2024 -<span class="team">Nandana Shreya Sneha Riddhi</span></p>
+        </div>
+    </footer>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

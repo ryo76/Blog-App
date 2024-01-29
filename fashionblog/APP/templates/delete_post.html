@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Delete A Post{% endblock %}
+{% block content %}
+<style>
+    #hehe {
+        margin-top: 70px
+    }
+
+    #something {
+
+        margin-bottom: 110px
+    }
+</style>
+{% if user.is_authenticated %}
+<h1 id="hehe">Delete {{ post.title }}?</h1>
+
+<div class="form-group" id="something">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        </br>
+        <strong>Are you sure?</strong></br></br>
+        <button class="btn btn-danger">Delete</button>
+    </form>
+</div>
+
+{% else %}
+Hehehehe naughty naughty
+{% endif %}
+
+{% endblock %}

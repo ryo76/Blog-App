@@ -1,0 +1,28 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<h1 style="color: rgb(247, 247, 191);">Latest Posts</h1>
+
+<div class="card-columns">
+    {% for post in object_list %}
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title ">{{ post.title }}</a></h5>
+                <p class="card-text">{{ post.snippet }}</p>
+                <p class="card-text">
+                    <italic>
+                        <small class="text-muted">{{ post.author.first_name }} {{ post.author.last_name }} - {{ post.post_date }}</small>
+                    </italic>
+                </p>
+                {% if user.is_authenticated and request.user.first_name == post.author.first_name %}
+                        <a href="{% url 'update_post' post.pk %}" class="btn btn-success btn-on-left" style="--bs-btn-padding-y: .75rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: .75rem ;">Edit</a>
+                        <a href="{% url 'delete_post' post.pk %}" class="btn btn-danger btn-on-middle" style="--bs-btn-padding-y: .75rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: .75rem ;">Delete</a>
+                {% endif %}
+                <a href="{% url 'article-detail' post.pk %}" class="btn btn-warning btn-on-right text-white text-white" style="--bs-btn-padding-y: .75rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: .75rem ;">Read More</a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+
