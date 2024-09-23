@@ -56,7 +56,7 @@ Ensure you have the following installed:
 
 - **Sign Up / Log In:** Users can create an account or log in to their existing account.
 - **Create Posts:** After logging in, users can create and manage their own blog posts.
-- **Comment on Posts:** Users can interact with content by commenting on blog posts.
+- **Update/Edit Posts:** Users can interact and update content of blog posts.
 
 ## Contributing
 
@@ -76,10 +76,6 @@ Contributions to improve the project are welcome! To contribute:
    git push origin feature-name
    ```
 5. **Open a Pull Request**
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ## Contact
 
